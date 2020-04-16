@@ -1,5 +1,9 @@
 # NittanyPath
 
+## 技术栈
+
++ Django
+
 ## Requirements
 
 + Python >= 3.7
