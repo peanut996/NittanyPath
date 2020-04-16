@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail</title>
+    {% load static %}
+    <link href="{% static 'css/panel.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'favcion.ico'%}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+
+<body>
+    <div class="course-table">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <th colspan="5" style="text-align:center">Student {{ name }}'s Course Information</th>
+                </tr>
+                <tr>
+                    <td>CourseName</td>
+                    <td>CourseDescription</td>
+                    <td>CourseGrade</td>
+                    <td>Professor's office</td>
+                    <td>Professor's email</td>
+                </tr>
+                {% if resultList %}
+                {% for result in resultList %}
+                {% if result.grade < 60 %}
+                <tr class="danger">
+                    <td>{{ result.c_name }}</td>
+                    <td>{{ result.c_description }}</td>
+                    <td>{{ result.grade }}</td>
+                    <td>{{ result.office }}</td>
+                    <td>{{ result.email }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td>{{ result.c_name }}</td>
+                    <td>{{ result.c_description }}</td>
+                    <td>{{ result.grade }}</td>
+                    <td>{{ result.office }}</td>
+                    <td>{{ result.fac_email_id }}</td>
+                </tr>
+                {% endif%}
+                {% endfor %}
+                {% endif %}
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

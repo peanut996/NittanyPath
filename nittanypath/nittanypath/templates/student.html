@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Interface</title>
+  {% load static %}
+  <link href="{% static 'css/nittanypath.css'%}" rel="stylesheet">
+  <link rel="shortcut icon" href="{% static 'favcion.ico'%}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+</head>
+<body>
+    <!-- {% if message %}
+        <script>
+                alert('{{ message }}');
+        </script>
+    {% endif %} -->
+    <div class='student-panel'>Student Panel</div>
+    <div class='center-button'><button type="button" class="btn btn-info btn-lg"><a href="{% url 'detail' name %}">CheckingInfo</a></button></div>
+    <div class='center-button'><button type="button" class="btn btn-info btn-lg"><a href="{% url 'student_post' name %}">CreatingPost</a></button></div>
+    <div class='center-button'><button type="button" class="btn btn-warning btn-lg"><a href="{% url 'drop' name %}">DroppingCourse</a></button></div>
+    <div class='center-button'><button type="button" class="btn btn-danger btn-lg"><a href="{% url 'change' name %}">ChangePassword</a></button></div>
+</body>
+</html> 

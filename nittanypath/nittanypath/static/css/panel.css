@@ -1,0 +1,34 @@
+.assign-form {
+    margin: 10% 10%;
+}
+
+.submit-form {
+    margin: 10% 10%;
+}
+
+.post-form {
+    margin: 10% 10%;
+}
+
+.drop-form {
+    margin: 10% 10%;
+}
+
+.change-form {
+    margin: 10% 10%;
+}
+
+
+.course-table {
+    margin-top: 5%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+
+.table > tbody:nth-child(1) > tr:nth-child(1) > th:nth-child(1) {
+    font-size: 22px;
+    line-height: 200%;
+    font-weight: 900;
+}
+  

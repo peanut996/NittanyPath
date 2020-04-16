@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop</title>
+    {% load static %}
+    <link href="{% static 'css/panel.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'favcion.ico'%}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+    {% if message %}
+        {% if type == 'success' %}
+            <div class="alert alert-success" role="alert"><strong>{{ message }}</strong></div>
+        {% elif type == 'fail' %}
+            <div class="alert alert-danger" role="alert"><strong>{{ message }}</strong> You've missed the last opportunity.  </div>
+        {% endif %}
+    {% endif %}
+    <div class="drop-form">
+        <form action="{% url 'drop' name %}" method="POST">
+            {% csrf_token %}
+            <div style="margin-bottom: 3%" class="form-group">
+                <label for="drop-course-id">Course ID</label>
+                <input style="width:40%" type="text" name="drop-course-id"  class="form-control" id="drop-course-id" placeholder="Input CourseID You Want To Drop.">
+            </div>
+            <button type="submit" class="btn btn-default">Drop</button>
+        </form>
+    </div>
+</body>
+</html>

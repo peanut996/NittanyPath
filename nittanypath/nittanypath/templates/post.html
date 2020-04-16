@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    {% load static %}
+    <link href="{% static 'css/panel.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'favcion.ico'%}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+    {% if message %}
+        {% if type == 'success' %}
+            <div class="alert alert-success" role="alert"><strong>{{ message }}</strong> try post another one?</div>
+        {% elif type == 'fail' %}
+            <div class="alert alert-danger" role="alert"><strong>{{ message }}</strong> change a few things up and try submitting again. </div>
+        {% endif %}
+    {% endif %}
+    <div class="post-form">
+        {% if account %}
+            {% if account == 'student' %}
+                <form action="{% url 'student_post' name %}" method="POST">
+                    {% csrf_token %}
+                    <div style="margin-bottom: 3%" class="form-group">
+                        <label for="InputCourseID1">Course ID</label>
+                        <input style="width:40%" type="text" name="course-id"  class="form-control" id="InputCourseID1" placeholder="CourseID">
+                    </div>
+                    <div style="margin-bottom: 3%" class="form-group">
+                        <label for="TextAreaPostContent1">Post Content</label><br>
+                        <textarea style="width:40%" id="TextAreaPostContent1" name="post-content" rows="5" cols="40"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            {% elif account == 'faculty' %}
+                <form action="{% url 'faculty_post' name %}" method="POST">
+                    {% csrf_token %}
+                    <div style="margin-bottom: 3%" class="form-group">
+                        <label for="InputCourseID2">Course ID</label>
+                        <input style="width:40%" type="text" name="course-id"  class="form-control" id="InputCourseID2" placeholder="CourseID">
+                    </div>
+                    <div style="margin-bottom: 3%" class="form-group">
+                        <label for="TextAreaPostContent2">Post Content</label><br>
+                        <textarea style="width:40%" id="TextAreaPostContent2" name="post-content" rows="5" cols="40"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            {% endif %}
+        {% endif %}
+    </div>
+</body>
+</html>

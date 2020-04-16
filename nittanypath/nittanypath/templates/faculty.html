@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faculty Interface</title>
+  {% load static %}
+  <link href="{% static 'css/nittanypath.css'%}" rel="stylesheet">
+  <link rel="shortcut icon" href="{% static 'favcion.ico'%}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+    <div class='faculty-panel'>Faculty Panel</div>
+    <div class='center-button'><button type="button" class="btn btn-info btn-lg"><a href="{% url 'assign' name %}">CreatingAssignment</a></button></div>
+    <div class='center-button'><button type="button" class="btn btn-info btn-lg"><a href="{% url 'faculty_post' name %}">CreatingPost</a></button></div>
+    <div class='center-button'><button type="button" class="btn btn-warning btn-lg"><a href="{% url 'submit' name %}">SubmittingScore</a></button></div>
+</body>
+</html> 

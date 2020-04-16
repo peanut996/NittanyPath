@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign</title>
+    {% load static %}
+    <link href="{% static 'css/panel.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'favcion.ico'%}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+{% if message %}
+{% if type == 'success' %}
+<div class="alert alert-success" role="alert"><strong>{{ message }}</strong> try post another one?</div>
+{% elif type == 'fail' %}
+<div class="al  ert alert-danger" role="alert"><strong>{{ message }}</strong> change a few things up and try submitting
+    again.
+</div>
+{% endif %}
+{% endif %}
+    <div class="assign-form" >
+        <form action="{% url 'assign' name %}" method="POST">
+            {% csrf_token %}
+            <div style="margin-bottom: 3%" class="form-group">
+                <label for="Section ID">Section ID</label>
+                <input style="width:40%" type="text" name="section-id" class="form-control" id="Section ID"
+                       placeholder="Choose a section ID to post a assignment.">
+            </div>
+            <div style="margin-bottom: 3%" class="form-group">
+                <label for="topic">Topic</label>
+                <input style="width:40%" type="text" name="topic" class="form-control" id="Topic"
+                       placeholder="Write topic for  assignment">
+            </div>
+            <div style="margin-bottom: 3%" class="form-group">
+                <label for="Assignment">Assignment</label><br>
+                <textarea style="width:40%" id="Assignment" name="assignment-content" rows="5" cols="40"></textarea>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

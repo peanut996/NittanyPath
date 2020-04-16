@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit</title>
+    {% load static %}
+    <link href="{% static 'css/panel.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'favcion.ico'%}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+{% if message %}
+{% if type == 'success' %}
+<div class="alert alert-success" role="alert"><strong>{{ message }}</strong> continue submit another one?</div>
+{% elif type == 'fail' %}
+<div class="al  ert alert-danger" role="alert"><strong>{{ message }}</strong> change a few things up and try submitting
+    again.
+</div>
+{% endif %}
+{% endif %}
+    <div class="submit-form" >
+        <form action="{% url 'submit' name %}" method="POST">
+            {% csrf_token %}
+            <div style="margin-bottom: 3%" class="form-group">
+                <label for="Section ID">Section ID</label>
+                <input style="width:40%" type="text" name="section-id" class="form-control" id="Section ID"
+                       placeholder="Choose a section ID to submit score.">
+            </div>
+            <div style="margin-bottom: 3%" class="form-group">
+                <label for="Student ID">Student ID</label>
+                <input style="width:40%" type="text" name="student-id" class="form-control" id="Student ID"
+                       placeholder="Write score for student">
+            </div>
+            <div style="margin-bottom: 3%" class="form-group">
+                <label for="Grade">Grade</label><br>
+                <input style="width:40%" id="Grade" name="grade" placeholder="Input score here.">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
