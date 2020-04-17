@@ -12,7 +12,7 @@
 ## 安装方法
 
 ```bash
-git clone https://github.com/peanut996/NittanyPath.git
+git clone https://gitee.com/peanut996/NittanyPath.git
 cd NittanyPath/
 
 # 生成虚拟环境
