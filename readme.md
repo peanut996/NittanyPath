@@ -58,3 +58,7 @@ python manage.py runserver
 
 `data`文件夹包含测试数据  
 admin账号`root`，密码`123`
+
+## 预览
+
+![nittanypath](./nittanypath/nittanypath/static/img/preview.jpg)
