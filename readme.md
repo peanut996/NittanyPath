@@ -61,4 +61,6 @@ admin账号`root`，密码`123`
 
 ## 预览
 
+[Demo](https://godv2ray.online/django/)
+
 ![nittanypath](./nittanypath/nittanypath/static/img/preview.jpg)
