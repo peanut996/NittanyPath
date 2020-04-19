@@ -37,4 +37,4 @@ urlpatterns = [
     path('faculty/<name>/assign/', views.assignview, name='assign'),
     path('faculty/<name>/submit/', views.submitview, name='submit'),
 
-]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
