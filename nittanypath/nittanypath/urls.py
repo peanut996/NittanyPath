@@ -23,18 +23,22 @@ from django.conf.urls.static import static
 #     path('admin/', admin.site.urls),
 # ]
 urlpatterns = [
-    path('', views.indexview,name='index'),
-    path('admin/', admin.site.urls, name='admin'),
-    path('login/', views.loginview, name='login'),
-    path('student/<name>/', views.studentview, name='student'),
-    path('student/<name>/change/', views.changeview, name='change'),
-    path('student/<name>/drop/', views.dropview, name='drop'),
-    path('student/<name>/detail/', views.detailview, name='detail'),
-    path('student/<name>/post/', views.postview, name='student_post'),
+    path('django/nittanypath/', views.indexview,name='index'),
+    path('django/nittanypath/admin/', admin.site.urls, name='admin'),
+    path('django/nittanypath/login/', views.loginview, name='login'),
+    path('django/nittanypath/student/<name>/', views.studentview, name='student'),
+    path('django/nittanypath/student/<name>/change/', views.changeview, name='change'),
+    path('django/nittanypath/student/<name>/drop/', views.dropview, name='drop'),
+    path('django/nittanypath/student/<name>/detail/', views.detailview, name='detail'),
+    path('django/nittanypath/student/<name>/post/', views.postview, name='student_post'),
 
-    path('faculty/<name>/', views.facultyview, name='faculty'),
-    path('faculty/<name>/post/', views.postview, name='faculty_post'),
-    path('faculty/<name>/assign/', views.assignview, name='assign'),
-    path('faculty/<name>/submit/', views.submitview, name='submit'),
+    path('django/nittanypath/faculty/<name>/', views.facultyview, name='faculty'),
+    path('django/nittanypath/faculty/<name>/post/', views.postview, name='faculty_post'),
+    path('django/nittanypath/faculty/<name>/assign/', views.assignview, name='assign'),
+    path('django/nittanypath/faculty/<name>/submit/', views.submitview, name='submit'),
 
-]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
+
+#urlpatterns = [
+#    path('django/nittanypath/', include('nittanypath.urls'))
+#]
