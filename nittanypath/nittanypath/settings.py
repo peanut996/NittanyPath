@@ -25,7 +25,7 @@ SECRET_KEY = ')7&gff(%p^m$+m%ms0)hu5vv!5idjxiy)$4(&%6ugx2m^=wbzw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = '*'
 
 
 # Application definition
@@ -84,9 +84,9 @@ DATABASES = {
         'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'nittanypath',
-        'USER': 'root',
+        'USER': 'nittanypath',
         'PASSWORD': '849421294',
-        'HOST':'127.0.0.1',
+        'HOST':'47.100.52.28',
         'PORT': '3306',
     }
 }
@@ -129,3 +129,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
