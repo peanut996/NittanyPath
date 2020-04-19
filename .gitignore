@@ -1,5 +1,6 @@
 # __pyc__
 nittanypath/nittanypath/__pycache__
-uwgsi.*
+uwgsi.log
+uwgsi.pid
 venv
 test.py
